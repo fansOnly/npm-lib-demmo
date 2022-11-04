@@ -1,0 +1,12 @@
+{
+  "name": "@vitamin/components",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "main": "index.js",
+  "module": "index.js",
+  "sideEffects": false,
+  "peerDependencies": {
+    "vue": "^2.7.13"
+  }
+}

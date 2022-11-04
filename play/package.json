@@ -1,0 +1,22 @@
+{
+  "name": "play",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.2.0",
+    "unplugin-vue-components": "^0.22.9",
+    "vite-plugin-inspect": "^0.7.7"
+  },
+  "dependencies": {
+    "vitamin-cc": "workspace:^1.0.0",
+    "vue": "^2.7.13"
+  }
+}

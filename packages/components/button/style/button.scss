@@ -1,0 +1,19 @@
+.vc-button {
+  padding: 10px 30px;
+  display: inline-flex;
+}
+.vc-button--default {
+  background: #e5e5e5;
+  color: #222;
+}
+.vc-button--primary {
+  background: #047878;
+  color: #fff;
+}
+.vc-button--info {
+  background: #73f48d;
+  color: #fff;
+}
+.vc-button--round {
+  border-radius: 999px;
+}

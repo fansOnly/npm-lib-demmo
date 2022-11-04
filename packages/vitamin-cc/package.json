@@ -1,0 +1,30 @@
+{
+  "name": "vitamin-cc",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "pnpm run clean && vite build",
+    "clean": "pnpm run clean:dist && pnpm run -r --parallel clean",
+    "clean:dist": "rimraf dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "main": "lib/index.js",
+  "module": "es/index.mjs",
+  "exports": {
+    ".": {
+      "require": "./lib/index.js",
+      "import": "./es/index.mjs"
+    }
+  },
+  "files": [
+    "es",
+    "lib"
+  ],
+  "sideEffects": [
+    "dist/*"
+  ],
+  "peerDependencies": {
+    "vue": "^2.7.13"
+  }
+}
