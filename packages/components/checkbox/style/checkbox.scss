@@ -1,0 +1,17 @@
+.vc-checkbox {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+.vc-checkbox--block {
+  display: flex;
+}
+.vc-checkbox__label:not(:empty) {
+  margin-left: 8px;
+}
+.vc-checkbox--multiple {
+  align-items: flex-start;
+  & .vc-checkbox__label:not(:empty) {
+    transform: translateY(-2rpx);
+  }
+}

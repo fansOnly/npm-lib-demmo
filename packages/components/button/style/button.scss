@@ -1,19 +1,97 @@
-.vc-button {
-  padding: 10px 30px;
+
+@import '../../common/style/mixins/button.scss';
+
+.vc-button-wrapper {
   display: inline-flex;
+  height: 100%;
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
+  line-height: 1;
+
+  &::after {
+    display: none;
+  }
 }
+
+.vc-button--block {
+  display: block;
+}
+
+.vc-button--disabled {
+  /* #ifdef H5 */
+  cursor: not-allowed;
+  /* #endif */
+  opacity: .7;
+}
+
+.vc-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: inherit;
+  padding: 0 28rpx;
+  border-width: 0;
+  border-color: inherit;
+  color: inherit;
+
+  &::after {
+    border-radius: inherit;
+  }
+
+  &.vc-button--text::after {
+    display: none;
+  }
+}
+
 .vc-button--default {
-  background: #e5e5e5;
-  color: #222;
+  @include button-color(#252525, #fff);
+
+  & .vc-button--plain {
+    color: #252525;
+    border-color: #252525;
+  }
 }
+
 .vc-button--primary {
-  background: #047878;
-  color: #fff;
+  @include button-color(#fff, #00bcd4);
 }
+
 .vc-button--info {
-  background: #73f48d;
-  color: #fff;
+  @include button-color(#fff, #FF7400);
 }
-.vc-button--round {
-  border-radius: 999px;
+
+.vc-button--success {
+  @include button-color(#fff, #4cd964);
+}
+
+.vc-button--warning {
+  @include button-color(#fff, #f0ad4e);
+}
+
+.vc-button--error {
+  @include button-color(#fff, #ED3C2F);
+}
+
+.vc-button--hover {
+  opacity: 0.6;
+}
+
+.vc-dialog__button--hover {
+  background: #ececec !important;
+}
+
+.vc-button__icon+.vc-button__text:not(:empty) {
+  margin-left: 16rpx;
+}
+
+.vc-button__text {
+  width: 100%;
+  line-height: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  color: inherit;
+  white-space: nowrap;
 }
