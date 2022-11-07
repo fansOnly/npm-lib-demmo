@@ -1,6 +1,15 @@
-export const withInstall = comp => {
-    comp.install = function(app) {
-        app.component(comp.name, comp)
+import { NOOP } from '@vitamin/shared'
+
+export const withInstall = (main, extra = {}) => {
+    main.install = function(app) {
+        for (const comp of [main, ...Object.values(extra)]) {
+            app.component(comp.name, comp)
+        }
     }
-    return comp
+    return main
+}
+
+export const withNoopInstall = component => {
+    component.install = NOOP
+    return component
 }
