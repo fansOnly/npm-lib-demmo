@@ -10,7 +10,7 @@
 
 <script>
 import { VcButton } from 'vitamin-cc'
-import { add } from '@vitamin/shared'
+
 export default {
   name: 'App',
   components: {
@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     add() {
-      this.sum = add(1, 2)
+      this.sum = 3
     }
   }
 }
