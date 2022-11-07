@@ -1,0 +1,9 @@
+{
+  "name": "@vitamin/tokens",
+  "main": "index.js",
+  "module": "index.js",
+  "sideEffects": false,
+  "peerDependencies": {
+    "vue": "^2.7.13"
+  }
+}
