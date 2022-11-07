@@ -4,8 +4,10 @@ importers:
 
   .:
     specifiers:
-      '@vitamin/components': workspace:^1.0.0
-      '@vitamin/shared': workspace:^1.0.0
+      '@vitamin/build': workspace:*
+      '@vitamin/components': workspace:*
+      '@vitamin/shared': workspace:*
+      '@vitamin/tokens': workspace:*
       fast-glob: ^3.2.12
       rimraf: ^3.0.2
       sass: ^1.55.0
@@ -13,8 +15,10 @@ importers:
       vite-plugin-vue2: ^2.0.2
       vue-template-compiler: ^2.7.13
     devDependencies:
+      '@vitamin/build': link:packages/build
       '@vitamin/components': link:packages/components
       '@vitamin/shared': link:packages/shared
+      '@vitamin/tokens': link:packages/tokens
       fast-glob: registry.npmmirror.com/fast-glob/3.2.12
       rimraf: registry.npmmirror.com/rimraf/3.0.2
       sass: registry.npmmirror.com/sass/1.55.0
@@ -23,10 +27,10 @@ importers:
       vue-template-compiler: registry.npmmirror.com/vue-template-compiler/2.7.13
 
   packages/components:
-    specifiers:
-      '@vitamin/shared': workspace:^1.0.0
-    dependencies:
-      '@vitamin/shared': link:../shared
+    specifiers: {}
+
+  packages/shared:
+    specifiers: {}
 
   packages/vitamin-cc:
     specifiers: {}
@@ -34,17 +38,23 @@ importers:
   play:
     specifiers:
       '@vitejs/plugin-vue': ^3.2.0
+      sass: ^1.56.0
       unplugin-vue-components: ^0.22.9
       vitamin-cc: workspace:^1.0.0
+      vite: ^3.2.2
       vite-plugin-inspect: ^0.7.7
+      vite-plugin-vue2: ^2.0.2
       vue: ^2.7.13
     dependencies:
       vitamin-cc: link:../packages/vitamin-cc
       vue: registry.npmmirror.com/vue/2.7.13
     devDependencies:
-      '@vitejs/plugin-vue': registry.npmmirror.com/@vitejs/plugin-vue/3.2.0_vue@2.7.13
+      '@vitejs/plugin-vue': registry.npmmirror.com/@vitejs/plugin-vue/3.2.0_vite@3.2.2+vue@2.7.13
+      sass: registry.npmmirror.com/sass/1.56.0
       unplugin-vue-components: registry.npmmirror.com/unplugin-vue-components/0.22.9_vue@2.7.13
-      vite-plugin-inspect: registry.npmmirror.com/vite-plugin-inspect/0.7.7
+      vite: registry.npmmirror.com/vite/3.2.2_sass@1.56.0
+      vite-plugin-inspect: registry.npmmirror.com/vite-plugin-inspect/0.7.7_vite@3.2.2
+      vite-plugin-vue2: registry.npmmirror.com/vite-plugin-vue2/2.0.2_vite@3.2.2+vue@2.7.13
 
 packages:
 
@@ -764,7 +774,7 @@ packages:
     version: 1.0.0
     dev: true
 
-  registry.npmmirror.com/@vitejs/plugin-vue/3.2.0_vue@2.7.13:
+  registry.npmmirror.com/@vitejs/plugin-vue/3.2.0_vite@3.2.2+vue@2.7.13:
     resolution: {integrity: sha512-E0tnaL4fr+qkdCNxJ+Xd0yM31UwMkQje76fsDVBBUCoGOUPexu2VDUYHL8P4CwV+zMvWw6nlRw19OnRKmYAJpw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vitejs/plugin-vue/-/plugin-vue-3.2.0.tgz}
     id: registry.npmmirror.com/@vitejs/plugin-vue/3.2.0
     name: '@vitejs/plugin-vue'
@@ -773,7 +783,11 @@ packages:
     peerDependencies:
       vite: ^3.0.0
       vue: ^3.2.25
+    peerDependenciesMeta:
+      vite:
+        optional: true
     dependencies:
+      vite: registry.npmmirror.com/vite/3.2.2_sass@1.56.0
       vue: registry.npmmirror.com/vue/2.7.13
     dev: true
 
@@ -798,6 +812,30 @@ packages:
       html-tags: registry.npmmirror.com/html-tags/2.0.0
       lodash.kebabcase: registry.npmmirror.com/lodash.kebabcase/4.1.1
       svg-tags: registry.npmmirror.com/svg-tags/1.0.0
+    dev: true
+
+  registry.npmmirror.com/@vue/babel-preset-jsx/1.4.0_6dl6k7whpivudzawllhtmuuqsm:
+    resolution: {integrity: sha512-QmfRpssBOPZWL5xw7fOuHNifCQcNQC1PrOo/4fu6xlhlKJJKSA3HqX92Nvgyx8fqHZTUGMPHmFA+IDqwXlqkSA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vue/babel-preset-jsx/-/babel-preset-jsx-1.4.0.tgz}
+    id: registry.npmmirror.com/@vue/babel-preset-jsx/1.4.0
+    name: '@vue/babel-preset-jsx'
+    version: 1.4.0
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+      vue: '*'
+    peerDependenciesMeta:
+      vue:
+        optional: true
+    dependencies:
+      '@babel/core': registry.npmmirror.com/@babel/core/7.19.6
+      '@vue/babel-helper-vue-jsx-merge-props': registry.npmmirror.com/@vue/babel-helper-vue-jsx-merge-props/1.4.0
+      '@vue/babel-plugin-transform-vue-jsx': registry.npmmirror.com/@vue/babel-plugin-transform-vue-jsx/1.4.0_@babel+core@7.19.6
+      '@vue/babel-sugar-composition-api-inject-h': registry.npmmirror.com/@vue/babel-sugar-composition-api-inject-h/1.4.0_@babel+core@7.19.6
+      '@vue/babel-sugar-composition-api-render-instance': registry.npmmirror.com/@vue/babel-sugar-composition-api-render-instance/1.4.0_@babel+core@7.19.6
+      '@vue/babel-sugar-functional-vue': registry.npmmirror.com/@vue/babel-sugar-functional-vue/1.4.0_@babel+core@7.19.6
+      '@vue/babel-sugar-inject-h': registry.npmmirror.com/@vue/babel-sugar-inject-h/1.4.0_@babel+core@7.19.6
+      '@vue/babel-sugar-v-model': registry.npmmirror.com/@vue/babel-sugar-v-model/1.4.0_@babel+core@7.19.6
+      '@vue/babel-sugar-v-on': registry.npmmirror.com/@vue/babel-sugar-v-on/1.4.0_@babel+core@7.19.6
+      vue: registry.npmmirror.com/vue/2.7.13
     dev: true
 
   registry.npmmirror.com/@vue/babel-preset-jsx/1.4.0_@babel+core@7.19.6:
@@ -2307,6 +2345,18 @@ packages:
       source-map-js: registry.npmmirror.com/source-map-js/1.0.2
     dev: true
 
+  registry.npmmirror.com/sass/1.56.0:
+    resolution: {integrity: sha512-WFJ9XrpkcnqZcYuLRJh5qiV6ibQOR4AezleeEjTjMsCocYW59dEG19U3fwTTXxzi2Ed3yjPBp727hbbj53pHFw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/sass/-/sass-1.56.0.tgz}
+    name: sass
+    version: 1.56.0
+    engines: {node: '>=12.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: registry.npmmirror.com/chokidar/3.5.3
+      immutable: registry.npmmirror.com/immutable/4.1.0
+      source-map-js: registry.npmmirror.com/source-map-js/1.0.2
+    dev: true
+
   registry.npmmirror.com/semver/6.3.0:
     resolution: {integrity: sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/semver/-/semver-6.3.0.tgz}
     name: semver
@@ -2474,13 +2524,17 @@ packages:
     version: 1.0.2
     dev: true
 
-  registry.npmmirror.com/vite-plugin-inspect/0.7.7:
+  registry.npmmirror.com/vite-plugin-inspect/0.7.7_vite@3.2.2:
     resolution: {integrity: sha512-2IlnshZuv0RHtUwMBNR8cW//VDLVKfBOG+JY9qqeL2TaNdet5m+Rw/Zxp63vtcX5FNhWO1fYCK1ENRv6PCOevg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vite-plugin-inspect/-/vite-plugin-inspect-0.7.7.tgz}
+    id: registry.npmmirror.com/vite-plugin-inspect/0.7.7
     name: vite-plugin-inspect
     version: 0.7.7
     engines: {node: '>=14'}
     peerDependencies:
       vite: ^3.1.0
+    peerDependenciesMeta:
+      vite:
+        optional: true
     dependencies:
       '@rollup/pluginutils': registry.npmmirror.com/@rollup/pluginutils/5.0.2
       debug: registry.npmmirror.com/debug/4.3.4
@@ -2488,6 +2542,7 @@ packages:
       kolorist: registry.npmmirror.com/kolorist/1.6.0
       sirv: registry.npmmirror.com/sirv/2.0.2
       ufo: registry.npmmirror.com/ufo/0.8.6
+      vite: registry.npmmirror.com/vite/3.2.2_sass@1.56.0
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -2501,6 +2556,9 @@ packages:
     peerDependencies:
       vite: ^2.0.0 || ^3.0.0
       vue-template-compiler: ^2.2.0
+    peerDependenciesMeta:
+      vite:
+        optional: true
     dependencies:
       '@babel/core': registry.npmmirror.com/@babel/core/7.19.6
       '@babel/parser': registry.npmmirror.com/@babel/parser/7.20.1
@@ -2591,6 +2649,106 @@ packages:
       - whiskers
     dev: true
 
+  registry.npmmirror.com/vite-plugin-vue2/2.0.2_vite@3.2.2+vue@2.7.13:
+    resolution: {integrity: sha512-Oo1iwc5Zo376s3MYXqS7j+KXs26EjiyWV8/dmI23SoorO3zaAgnBefR45Zme+QtM407tJ2MVq0mqfI10qA5+LQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vite-plugin-vue2/-/vite-plugin-vue2-2.0.2.tgz}
+    id: registry.npmmirror.com/vite-plugin-vue2/2.0.2
+    name: vite-plugin-vue2
+    version: 2.0.2
+    peerDependencies:
+      vite: ^2.0.0 || ^3.0.0
+      vue-template-compiler: ^2.2.0
+    peerDependenciesMeta:
+      vite:
+        optional: true
+    dependencies:
+      '@babel/core': registry.npmmirror.com/@babel/core/7.19.6
+      '@babel/parser': registry.npmmirror.com/@babel/parser/7.20.1
+      '@babel/plugin-proposal-class-properties': registry.npmmirror.com/@babel/plugin-proposal-class-properties/7.18.6_@babel+core@7.19.6
+      '@babel/plugin-proposal-decorators': registry.npmmirror.com/@babel/plugin-proposal-decorators/7.20.0_@babel+core@7.19.6
+      '@babel/plugin-proposal-nullish-coalescing-operator': registry.npmmirror.com/@babel/plugin-proposal-nullish-coalescing-operator/7.18.6_@babel+core@7.19.6
+      '@babel/plugin-proposal-object-rest-spread': registry.npmmirror.com/@babel/plugin-proposal-object-rest-spread/7.19.4_@babel+core@7.19.6
+      '@babel/plugin-proposal-optional-chaining': registry.npmmirror.com/@babel/plugin-proposal-optional-chaining/7.18.9_@babel+core@7.19.6
+      '@babel/plugin-transform-arrow-functions': registry.npmmirror.com/@babel/plugin-transform-arrow-functions/7.18.6_@babel+core@7.19.6
+      '@babel/plugin-transform-block-scoping': registry.npmmirror.com/@babel/plugin-transform-block-scoping/7.20.0_@babel+core@7.19.6
+      '@babel/plugin-transform-computed-properties': registry.npmmirror.com/@babel/plugin-transform-computed-properties/7.18.9_@babel+core@7.19.6
+      '@babel/plugin-transform-destructuring': registry.npmmirror.com/@babel/plugin-transform-destructuring/7.20.0_@babel+core@7.19.6
+      '@babel/plugin-transform-parameters': registry.npmmirror.com/@babel/plugin-transform-parameters/7.20.1_@babel+core@7.19.6
+      '@babel/plugin-transform-spread': registry.npmmirror.com/@babel/plugin-transform-spread/7.19.0_@babel+core@7.19.6
+      '@babel/plugin-transform-typescript': registry.npmmirror.com/@babel/plugin-transform-typescript/7.20.0_@babel+core@7.19.6
+      '@rollup/pluginutils': registry.npmmirror.com/@rollup/pluginutils/4.2.1
+      '@vue/babel-helper-vue-jsx-merge-props': registry.npmmirror.com/@vue/babel-helper-vue-jsx-merge-props/1.4.0
+      '@vue/babel-preset-jsx': registry.npmmirror.com/@vue/babel-preset-jsx/1.4.0_6dl6k7whpivudzawllhtmuuqsm
+      '@vue/component-compiler-utils': registry.npmmirror.com/@vue/component-compiler-utils/3.3.0
+      consolidate: registry.npmmirror.com/consolidate/0.16.0
+      debug: registry.npmmirror.com/debug/4.3.4
+      fs-extra: registry.npmmirror.com/fs-extra/10.1.0
+      hash-sum: registry.npmmirror.com/hash-sum/2.0.0
+      magic-string: registry.npmmirror.com/magic-string/0.26.7
+      prettier: registry.npmmirror.com/prettier/2.7.1
+      querystring: registry.npmmirror.com/querystring/0.2.1
+      rollup: registry.npmmirror.com/rollup/2.79.1
+      slash: registry.npmmirror.com/slash/3.0.0
+      source-map: registry.npmmirror.com/source-map/0.7.4
+      vite: registry.npmmirror.com/vite/3.2.2_sass@1.56.0
+      vue-template-babel-compiler: registry.npmmirror.com/vue-template-babel-compiler/1.2.0
+    transitivePeerDependencies:
+      - arc-templates
+      - atpl
+      - babel-core
+      - bracket-template
+      - coffee-script
+      - dot
+      - dust
+      - dustjs-helpers
+      - dustjs-linkedin
+      - eco
+      - ect
+      - ejs
+      - haml-coffee
+      - hamlet
+      - hamljs
+      - handlebars
+      - hogan.js
+      - htmling
+      - jade
+      - jazz
+      - jqtpl
+      - just
+      - liquid-node
+      - liquor
+      - lodash
+      - marko
+      - mote
+      - mustache
+      - nunjucks
+      - plates
+      - pug
+      - qejs
+      - ractive
+      - razor-tmpl
+      - react
+      - react-dom
+      - slm
+      - squirrelly
+      - supports-color
+      - swig
+      - swig-templates
+      - teacup
+      - templayed
+      - then-jade
+      - then-pug
+      - tinyliquid
+      - toffee
+      - twig
+      - twing
+      - underscore
+      - vash
+      - velocityjs
+      - vue
+      - walrus
+      - whiskers
+    dev: true
+
   registry.npmmirror.com/vite/3.2.2_sass@1.55.0:
     resolution: {integrity: sha512-pLrhatFFOWO9kS19bQ658CnRYzv0WLbsPih6R+iFeEEhDOuYgYCX2rztUViMz/uy/V8cLCJvLFeiOK7RJEzHcw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vite/-/vite-3.2.2.tgz}
     id: registry.npmmirror.com/vite/3.2.2
@@ -2623,6 +2781,64 @@ packages:
       sass: registry.npmmirror.com/sass/1.55.0
     optionalDependencies:
       fsevents: registry.npmmirror.com/fsevents/2.3.2
+    dev: true
+
+  registry.npmmirror.com/vite/3.2.2_sass@1.56.0:
+    resolution: {integrity: sha512-pLrhatFFOWO9kS19bQ658CnRYzv0WLbsPih6R+iFeEEhDOuYgYCX2rztUViMz/uy/V8cLCJvLFeiOK7RJEzHcw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vite/-/vite-3.2.2.tgz}
+    id: registry.npmmirror.com/vite/3.2.2
+    name: vite
+    version: 3.2.2
+    engines: {node: ^14.18.0 || >=16.0.0}
+    hasBin: true
+    peerDependencies:
+      less: '*'
+      sass: '*'
+      stylus: '*'
+      sugarss: '*'
+      terser: ^5.4.0
+    peerDependenciesMeta:
+      less:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      sugarss:
+        optional: true
+      terser:
+        optional: true
+    dependencies:
+      esbuild: registry.npmmirror.com/esbuild/0.15.12
+      postcss: registry.npmmirror.com/postcss/8.4.18
+      resolve: registry.npmmirror.com/resolve/1.22.1
+      rollup: registry.npmmirror.com/rollup/2.79.1
+      sass: registry.npmmirror.com/sass/1.56.0
+    optionalDependencies:
+      fsevents: registry.npmmirror.com/fsevents/2.3.2
+    dev: true
+
+  registry.npmmirror.com/vue-template-babel-compiler/1.2.0:
+    resolution: {integrity: sha512-CScBSX1/wCdmmZ/Lvj/63p2CCVTS0FMj0F69VRBo73CuJrjvPAPGmeNJ7D/cwt/VS2PduowRWbO8N4Zh4Z3b0g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue-template-babel-compiler/-/vue-template-babel-compiler-1.2.0.tgz}
+    name: vue-template-babel-compiler
+    version: 1.2.0
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      vue-template-compiler: ^2.6.0
+    dependencies:
+      '@babel/core': registry.npmmirror.com/@babel/core/7.19.6
+      '@babel/plugin-proposal-nullish-coalescing-operator': registry.npmmirror.com/@babel/plugin-proposal-nullish-coalescing-operator/7.18.6_@babel+core@7.19.6
+      '@babel/plugin-proposal-object-rest-spread': registry.npmmirror.com/@babel/plugin-proposal-object-rest-spread/7.19.4_@babel+core@7.19.6
+      '@babel/plugin-proposal-optional-chaining': registry.npmmirror.com/@babel/plugin-proposal-optional-chaining/7.18.9_@babel+core@7.19.6
+      '@babel/plugin-transform-arrow-functions': registry.npmmirror.com/@babel/plugin-transform-arrow-functions/7.18.6_@babel+core@7.19.6
+      '@babel/plugin-transform-block-scoping': registry.npmmirror.com/@babel/plugin-transform-block-scoping/7.20.0_@babel+core@7.19.6
+      '@babel/plugin-transform-computed-properties': registry.npmmirror.com/@babel/plugin-transform-computed-properties/7.18.9_@babel+core@7.19.6
+      '@babel/plugin-transform-destructuring': registry.npmmirror.com/@babel/plugin-transform-destructuring/7.20.0_@babel+core@7.19.6
+      '@babel/plugin-transform-parameters': registry.npmmirror.com/@babel/plugin-transform-parameters/7.20.1_@babel+core@7.19.6
+      '@babel/plugin-transform-spread': registry.npmmirror.com/@babel/plugin-transform-spread/7.19.0_@babel+core@7.19.6
+      '@babel/types': registry.npmmirror.com/@babel/types/7.20.0
+      deepmerge: registry.npmmirror.com/deepmerge/4.2.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   registry.npmmirror.com/vue-template-babel-compiler/1.2.0_rwi2bc5qwo57avi7ugpaxvtriq:

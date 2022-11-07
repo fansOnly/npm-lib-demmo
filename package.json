@@ -10,8 +10,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@vitamin/components": "workspace:^1.0.0",
-    "@vitamin/shared": "workspace:^1.0.0",
+    "@vitamin/build": "workspace:*",
+    "@vitamin/components": "workspace:*",
+    "@vitamin/shared": "workspace:*",
+    "@vitamin/tokens": "workspace:*",
     "fast-glob": "^3.2.12",
     "rimraf": "^3.0.2",
     "sass": "^1.55.0",
