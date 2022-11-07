@@ -1,6 +1,6 @@
 import { defineConfig } from "vite"
 import { createVuePlugin } from 'vite-plugin-vue2'
-import { generateExternal, createRollupConfig, generateEntryFiles, excludeFiles } from './build-utils'
+import { generateExternal, createRollupConfig, generateEntryFiles, excludeFiles } from '@vitamin/build'
 
 export default defineConfig(async () => {
   const input = excludeFiles(await generateEntryFiles({ deep: 2 }))

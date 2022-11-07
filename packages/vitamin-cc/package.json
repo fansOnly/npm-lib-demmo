@@ -22,8 +22,13 @@
     "es",
     "lib"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "style": "", 
   "sideEffects": [
-    "dist/*"
+    "*.scss",
+    "*.css"
   ],
   "peerDependencies": {
     "vue": "^2.7.13"
