@@ -13,7 +13,8 @@
   },
   "files": [
     "es",
-    "lib"
+    "lib",
+    "theme-chalk"
   ],
   "publishConfig": {
     "access": "public"
