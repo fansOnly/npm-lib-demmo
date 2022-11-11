@@ -8,6 +8,7 @@
   "scripts": {
     "build": "pnpm run -C internal/build build",
     "build:theme": "pnpm run -C packages/theme-chalk build",
+    "publish": "sh ./scripts/publish.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
