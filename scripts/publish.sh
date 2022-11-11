@@ -3,13 +3,13 @@
 set -e
 
 pnpm i --frozen-lockfile
-pnpm version patch
 
 pnpm build
 
 pnpm build:theme
 
 cd dist
+pnpm version patch
 npm publish
 cd -
 
