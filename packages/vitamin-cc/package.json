@@ -18,7 +18,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "style": "", 
+  "style": "theme-chalk/index.css",
   "sideEffects": [
     "*.scss",
     "*.css"
