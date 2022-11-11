@@ -1,5 +1,4 @@
-
-@import '../../common/style/mixins/button.scss';
+@use 'mixins/button' as *;
 
 .vc-button-wrapper {
   display: inline-flex;

@@ -21,6 +21,7 @@
 <script>
 import { addUnit } from '../../common/util';
 import { cellKey } from '@vitamin/tokens'
+import '../style'
 
 export default {
   name: 'vc-cell',
@@ -140,5 +141,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped src="../style/cell.scss"></style>

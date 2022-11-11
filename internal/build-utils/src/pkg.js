@@ -1,4 +1,5 @@
 import glob from "fast-glob"
+import { vcPkgPath, pkgRoot } from './paths'
 
 export const getPackageManifest = pkgPath => {
   return require(pkgPath)
@@ -15,7 +16,7 @@ export function getPackageDependencies() {
 }
 
 export async function generateEntryFiles(options) {
-  const files = await glob('**/index.{js,ts,vue,scss,css}', {
+  const files = await glob('**/index.{js,ts,vue}', {
     cwd: pkgRoot,
     absolute: true,
     onlyFiles: true,

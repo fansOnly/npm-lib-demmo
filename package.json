@@ -6,19 +6,18 @@
     "play"
   ],
   "scripts": {
-    "build": "pnpm run -C packages/vitamin-cc build",
+    "build": "pnpm run -C internal/build build",
+    "build:theme": "pnpm run -C packages/theme-chalk build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@vitamin/build": "workspace:*",
+    "@vitamin/build-utils": "workspace:*",
     "@vitamin/components": "workspace:*",
     "@vitamin/shared": "workspace:*",
+    "@vitamin/theme-chalk": "workspace:*",
     "@vitamin/tokens": "workspace:*",
-    "fast-glob": "^3.2.12",
     "rimraf": "^3.0.2",
     "sass": "^1.55.0",
-    "vite": "^3.2.2",
-    "vite-plugin-vue2": "^2.0.2",
     "vue-template-compiler": "^2.7.13"
   },
   "peerDependencies": {

@@ -6,6 +6,7 @@
 
 <script>
 import { checkboxKey } from '@vitamin/tokens'
+import '../style/checkbox-group'
 
 export default {
   name: 'vc-checkbox-group',
@@ -36,5 +37,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped src="../style/checkbox-group.scss"></style>

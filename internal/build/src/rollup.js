@@ -1,23 +1,5 @@
-import { getPackageDependencies } from './pkg'
-
-export const buildConfig = {
-  esm: {
-    format: 'es',
-    ext: 'mjs',
-    output: {
-      name: 'es',
-      path: path.resolve(vcOutput, 'es')
-    }
-  },
-  cjs: {
-    format: 'cjs',
-    ext: 'js',
-    output: {
-      name: 'lib',
-      path: path.resolve(vcOutput, 'lib')
-    }
-  }
-}
+import { buildConfig } from './config'
+import { getPackageDependencies, vcRoot } from '@vitamin/build-utils'
 
 export function createRollupConfig() {
   return Object.entries(buildConfig).map(([module, config]) => {
@@ -34,12 +16,12 @@ export function createRollupConfig() {
   })
 }
 
-export function generateExternal() {
+export function generateExternal(options = {}) {
   const { dependencies, peerDependencies } = getPackageDependencies()
 
   return (id) => {
     const packages = peerDependencies
-    packages.push('vue', ...dependencies)
-    return [...new Set(packages)].some(pkg => id === pkg || id.startsWith(`${pkg}/`))
+    // packages.push('@vue', ...dependencies)
+    return [...new Set(packages)].some(pkg => id === pkg || id?.startsWith(`${pkg}/`))
   }
 }

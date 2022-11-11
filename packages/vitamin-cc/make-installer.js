@@ -1,4 +1,4 @@
-const INSTALLED_KEY = Symbol()
+const INSTALLED_KEY = Symbol('INSTALLED_KEY')
 
 export function makeInstaller(components) {
   const install = function(app) {

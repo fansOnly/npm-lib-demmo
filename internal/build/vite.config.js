@@ -1,6 +1,9 @@
 import { defineConfig } from "vite"
 import { createVuePlugin } from 'vite-plugin-vue2'
-import { generateExternal, createRollupConfig, generateEntryFiles, excludeFiles } from '@vitamin/build'
+import { resolve } from 'path'
+import { generateExternal, createRollupConfig } from './src/index'
+import { generateEntryFiles, excludeFiles, vcRoot } from '@vitamin/build-utils'
+import { copyFiles } from './src/plugins/copyFiles'
 
 export default defineConfig(async () => {
   const input = excludeFiles(await generateEntryFiles({ deep: 2 }))
@@ -8,7 +11,7 @@ export default defineConfig(async () => {
   return {
     build: {
       lib: {
-        entry: './index.js',
+        entry: resolve(vcRoot, './index.js'),
         name: 'vitamin-cc'
       },
       emptyOutDir: true,
@@ -19,7 +22,8 @@ export default defineConfig(async () => {
       }
     },
     plugins: [
-      createVuePlugin()
+      createVuePlugin(),
+      copyFiles()
     ]
   }
 })

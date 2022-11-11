@@ -9,6 +9,7 @@
 
 <script>
 import { checkboxKey } from '@vitamin/tokens'
+import '../style'
 
 export default {
   name: 'vc-checkbox',
@@ -100,5 +101,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped src="../style/checkbox.scss"></style>

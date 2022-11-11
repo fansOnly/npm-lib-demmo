@@ -3,7 +3,7 @@
     :class="['vc-button-wrapper', 'vc-button--' + type, customClass, block || size === 'auto' ? 'vc-button--block' : null, disabled ? 'vc-button--disabled' : null]"
     :hover-class=" hoverClass || 'vc-button--hover'" :style="wrapperStyled" :disabled="disabled" :open-type="openType"
     @getphonenumber="onGetPhoneNumber" @getuserinfo="onGetUserInfo" @opensetting="onOpenSetting" @tap="onClick">
-    <view
+    <div
       :class="['vc-button', plain ? 'vc-button--plain' : null, border && !isLinearGradient && !disabled ? 'vc-hairline--surround' : null]"
       :style="buttonStyled">
       <vc-loading v-if="loading" type="spinner" color="#fff"></vc-loading>
@@ -11,16 +11,17 @@
         <slot v-if="icon" name="icon">
           <vc-icon class="vc-button__icon" :name="icon" :size="iconSize" :color="iconColor" />
         </slot>
-        <view class="vc-button__text">
+        <div class="vc-button__text">
           <slot></slot>
-        </view>
+        </div>
       </template>
-    </view>
+    </div>
   </button>
 </template>
 
 <script>
 import { addUnit } from '../../common/util';
+import '../style'
 
 export default {
   name: 'vc-button',
@@ -185,5 +186,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped src="../style/button.scss"></style>

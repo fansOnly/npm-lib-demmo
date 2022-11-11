@@ -1,0 +1,14 @@
+{
+  "name": "@vitamin/build-utils",
+  "private": true,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "license": "MIT",
+  "scripts": {
+    "build": "unbuild"
+  },
+  "devDependencies": {
+    "fast-glob": "^3.2.12",
+    "unbuild": "^0.9.4"
+  }
+}

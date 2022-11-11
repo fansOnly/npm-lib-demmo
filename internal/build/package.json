@@ -1,0 +1,13 @@
+{
+  "name": "@vitamin/build",
+  "scripts": {
+    "build": "pnpm run clean:dist && vite build",
+    "clean": "pnpm run clean:dist && pnpm run -r --parallel clean",
+    "clean:dist": "rimraf dist"
+  },
+  "devDependencies": {
+    "fs-extra": "^10.1.0",
+    "vite": "^3.2.2",
+    "vite-plugin-vue2": "^2.0.2"
+  }
+}

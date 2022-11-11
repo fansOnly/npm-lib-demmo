@@ -1,9 +1,9 @@
 import { withInstall, withNoopInstall } from '@vitamin/shared'
-import CheckBox from './src/checkbox.vue'
-import CheckBoxGroup from './src/checkbox-group.vue'
+import Checkbox from './src/checkbox.vue'
+import CheckboxGroup from './src/checkbox-group.vue'
 
-export const VcCheckBox = withInstall(CheckBox, {
-  CheckBoxGroup
+export const VcCheckbox = withInstall(Checkbox, {
+  CheckboxGroup
 })
-export const VcCheckBoxGroup = withNoopInstall(CheckBoxGroup)
-export default VcCheckBox
+export const VcCheckboxGroup = withNoopInstall(CheckboxGroup)
+export default VcCheckbox

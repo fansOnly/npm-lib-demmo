@@ -18,6 +18,8 @@
 
 <script>
 import { addUnit } from '../../common/util';
+import '../style'
+
 export default {
   name: 'vc-action-sheet',
   props: {
@@ -121,5 +123,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped src="../style/action-sheet.scss"></style>

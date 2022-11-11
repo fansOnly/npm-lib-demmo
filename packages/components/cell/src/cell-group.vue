@@ -6,6 +6,7 @@
 
 <script>
 import { cellKey } from '@vitamin/tokens'
+import '../style/cell-group'
 
 export default {
   name: 'vc-cell-group',
@@ -32,5 +33,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped src="../style/cell-group.scss"></style>

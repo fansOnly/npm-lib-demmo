@@ -2,13 +2,6 @@
   "name": "vitamin-cc",
   "version": "1.0.0",
   "description": "a npm demo library",
-  "scripts": {
-    "build:all": "pnpm run -C build",
-    "build": "pnpm run clean && vite build",
-    "clean": "pnpm run clean:dist && pnpm run -r --parallel clean",
-    "clean:dist": "rimraf dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "license": "MIT",
   "main": "lib/index.js",
   "module": "es/index.mjs",
