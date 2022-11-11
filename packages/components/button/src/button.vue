@@ -3,7 +3,7 @@
     :class="['vc-button-wrapper', 'vc-button--' + type, customClass, block || size === 'auto' ? 'vc-button--block' : null, disabled ? 'vc-button--disabled' : null]"
     :hover-class=" hoverClass || 'vc-button--hover'" :style="wrapperStyled" :disabled="disabled" :open-type="openType"
     @getphonenumber="onGetPhoneNumber" @getuserinfo="onGetUserInfo" @opensetting="onOpenSetting" @tap="onClick">
-    <div
+    <view
       :class="['vc-button', plain ? 'vc-button--plain' : null, border && !isLinearGradient && !disabled ? 'vc-hairline--surround' : null]"
       :style="buttonStyled">
       <vc-loading v-if="loading" type="spinner" color="#fff"></vc-loading>
@@ -11,11 +11,11 @@
         <slot v-if="icon" name="icon">
           <vc-icon class="vc-button__icon" :name="icon" :size="iconSize" :color="iconColor" />
         </slot>
-        <div class="vc-button__text">
+        <view class="vc-button__text">
           <slot></slot>
-        </div>
+        </view>
       </template>
-    </div>
+    </view>
   </button>
 </template>
 
