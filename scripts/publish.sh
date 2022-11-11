@@ -4,12 +4,14 @@ set -e
 
 pnpm i --frozen-lockfile
 
-pnpm build
+cd packages/vitamin-cc
+pnpm version patch
+cd -
 
+pnpm build
 pnpm build:theme
 
 cd dist
-pnpm version patch
 npm publish
 cd -
 
