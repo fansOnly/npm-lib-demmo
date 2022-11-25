@@ -25,4 +25,4 @@ export const vmPkgPath = resolve(vmRoot, 'package.json')
 export const themePath = resolve(vcOutput, 'theme-chalk')
 
 // ${root}/internal/build
-export const buildRoot = path.resolve(projRoot, 'internal', 'build')
+export const buildRoot = resolve(projRoot, 'internal', 'build')
