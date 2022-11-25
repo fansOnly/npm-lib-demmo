@@ -9,6 +9,8 @@
     "build": "pnpm run -C internal/build build",
     "build:theme": "pnpm run -C packages/theme-chalk build",
     "publish": "sh ./scripts/publish.sh",
+    "clean": "pnpm run clean:dist && pnpm run -r --parallel clean",
+    "clean:dist": "rimraf dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {

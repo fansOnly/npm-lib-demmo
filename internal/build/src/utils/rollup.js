@@ -1,4 +1,4 @@
-import { buildConfig } from './config'
+import { buildConfig } from '../config'
 import { getPackageDependencies, vcRoot } from '@vitamin/build-utils'
 
 export function createRollupConfig() {
