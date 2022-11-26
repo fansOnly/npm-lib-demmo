@@ -1,52 +1,54 @@
 import path from 'path'
 import { writeFile } from 'fs/promises'
-import fs from 'fs-extra'
 import consola from 'consola'
-import stripJsonComments from 'strip-json-comments'
-import { getPackageManifest, vcOutput, vmRoot } from '@vitamin/build-utils'
+import { getPackageManifest, getWorkspacePackages, vcOutput, vmRoot } from '@vitamin/build-utils'
 
-function getPkg(root) {
-  return getPackageManifest(path.resolve(root, 'package.json'))
+let shouldUpdate = true
+
+function getProjectPackage(projRoot) {
+  return getPackageManifest(path.resolve(projRoot, 'package.json'))
 }
 
 function getVersion() {
-  let version
+  let pkg
   try {
-    const pkg = getPkg(vcOutput)
-    version = pkg.version
+    pkg = getProjectPackage(vcOutput)
   } catch (error) {
-    consola.log('error: ', error)
-    version = getPkg(vmRoot)
+    pkg = getProjectPackage(vmRoot)
+    shouldUpdate = false
   }
-  return version
+  return pkg.version
 }
 
 const version = getVersion()
 
 async function main() {
   consola.info(`🚀 ™ Version: ${version}`)
+  if (!shouldUpdate) return
+
   await writeFile(
     path.resolve(vmRoot, 'version.js'),
     `export const version = '${version}'\n`
   )
 
-  const vmPackage = path.resolve(vmRoot, 'package.json')
-  let data = await fs.readFileSync(vmPackage, 'utf8')
-  data = parseJson(data)
-  data.version = version
-  fs.writeJsonSync(vmPackage, data, { spaces: '\t' })
+  const pkgs = Object.fromEntries(
+    (await getWorkspacePackages()).filter(pkg => !!pkg.manifest.name).map((pkg) => [pkg.manifest.name, pkg])
+  )
+
+  const vitaminWeixin = pkgs['vitamin-weixin']
+
+  const writeVersion = async (project) => {
+    await project.writeProjectManifest({
+      ...project.manifest,
+      version
+    })
+  }
+
+  try {
+    writeVersion(vitaminWeixin)
+  } catch (error) {
+    consola.error(error)
+  }
 }
 
 main()
-
-function parseJson(content) {
-  if (typeof content === 'string') {
-    content = JSON.parse(stripJsonComments(content))
-  }
-
-  content = JSON.stringify(content)
-    .replace(/\u2028/g, '\\u2028')
-    .replace(/\u2029/g, '\\u2029')
-
-  return JSON.parse(content)
-}

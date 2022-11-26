@@ -2,27 +2,22 @@ import { resolve } from 'path'
 
 // ${root}
 export const projRoot = resolve(__dirname, '..', '..', '..')
-
 // ${root}/dist
 export const vcOutput = resolve(projRoot, 'dist')
-
-// ${root}/packages
+// ${root}/packages as @vitamin/*
 export const pkgRoot = resolve(projRoot, 'packages')
-
-// ${root}/packages/vitamin-cc as
+// ${root}/packages/vitamin-cc
 export const vcRoot = resolve(pkgRoot, 'vitamin-cc')
-
-// ${root}/vitamin-cc/package.json
-export const vcPkgPath = resolve(vcRoot, 'package.json')
-
 // ${root}/packages/vitamin-weixin
 export const vmRoot = resolve(pkgRoot, 'vitamin-weixin')
-
-// ${root}/packages/vitamin-weixin/package.json
-export const vmPkgPath = resolve(vmRoot, 'package.json')
-
 // ${root}/packages/theme-chalk as @vitamin/theme-chalk
 export const themePath = resolve(vcOutput, 'theme-chalk')
-
-// ${root}/internal/build
+// ${root}/internal/build as @vitamin/build
 export const buildRoot = resolve(projRoot, 'internal', 'build')
+
+// packages.json
+
+// ${root}/vitamin-cc/package.json
+export const vcPackage = resolve(vcRoot, 'package.json')
+// ${root}/vitamin-weixin/package.json
+export const vmPackage = resolve(vmRoot, 'package.json')

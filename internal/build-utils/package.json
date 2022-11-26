@@ -7,8 +7,12 @@
   "scripts": {
     "build": "unbuild"
   },
+  "dependencies": {
+    "@pnpm/find-workspace-packages": "^5.0.9",
+    "@pnpm/logger": "^5.0.0",
+    "@pnpm/write-project-manifest": "^4.0.2"
+  },
   "devDependencies": {
-    "fast-glob": "^3.2.12",
     "unbuild": "^0.9.4"
   }
 }

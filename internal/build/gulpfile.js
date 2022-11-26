@@ -3,14 +3,14 @@ import { mkdir } from 'fs/promises'
 import fs from 'fs-extra'
 import { dest, parallel, series, src } from 'gulp'
 import { run, withTaskName } from './src'
-import { projRoot, vcOutput, vmRoot, vmPkgPath } from "@vitamin/build-utils"
+import { projRoot, vcOutput, vmRoot, vmPackage } from "@vitamin/build-utils"
 
 // ${root}/dist/weixin
 const distBundle = path.resolve(vcOutput, 'weixin')
 
 export const copyFiles = () =>
   Promise.all([
-    fs.copySync(vmPkgPath, path.join(vcOutput, 'package.json')),
+    fs.copySync(vmPackage, path.join(vcOutput, 'package.json')),
     fs.copySync(
       path.resolve(projRoot, 'README.md'),
       path.resolve(vcOutput, 'README.md')
