@@ -8,8 +8,8 @@ export const vcOutput = resolve(projRoot, 'dist')
 export const pkgRoot = resolve(projRoot, 'packages')
 // ${root}/packages/vitamin-cc
 export const vcRoot = resolve(pkgRoot, 'vitamin-cc')
-// ${root}/packages/vitamin-weixin
-export const vmRoot = resolve(pkgRoot, 'vitamin-weixin')
+// ${root}/packages/vitamin-wx
+export const vmRoot = resolve(pkgRoot, 'vitamin-wx')
 // ${root}/packages/theme-chalk as @vitamin/theme-chalk
 export const themePath = resolve(vcOutput, 'theme-chalk')
 // ${root}/internal/build as @vitamin/build
@@ -19,5 +19,5 @@ export const buildRoot = resolve(projRoot, 'internal', 'build')
 
 // ${root}/vitamin-cc/package.json
 export const vcPackage = resolve(vcRoot, 'package.json')
-// ${root}/vitamin-weixin/package.json
+// ${root}/vitamin-wx/package.json
 export const vmPackage = resolve(vmRoot, 'package.json')

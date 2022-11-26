@@ -32,13 +32,13 @@ async function main() {
     `export const version = '${version}'\n`
   )
 
-  consola.debug(chalk.yellow(`Updating package.json for vitamin-weixin`))
+  consola.debug(chalk.yellow(`Updating package.json for vitamin-wx`))
 
   const pkgs = Object.fromEntries(
     (await getWorkspacePackages()).filter(pkg => !!pkg.manifest.name).map((pkg) => [pkg.manifest.name, pkg])
   )
 
-  const vitaminWeixin = pkgs['vitamin-weixin']
+  const vitaminWeixin = pkgs['vitamin-wx']
 
   const writeVersion = async (project) => {
     await project.writeProjectManifest({

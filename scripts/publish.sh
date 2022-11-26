@@ -5,6 +5,7 @@ set -e
 pnpm i --frozen-lockfile
 
 pnpm build
+pnpm update:version
 
 npm config set registry https://registry.npmjs.org
 
