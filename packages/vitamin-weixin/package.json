@@ -1,6 +1,6 @@
 {
 	"name": "vitamin-weixin",
-	"version": "0.0.23",
+	"version": "0.0.1",
 	"description": "a npm demo library",
 	"license": "MIT",
 	"main": "index.js",
