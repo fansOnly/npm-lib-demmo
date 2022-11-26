@@ -38,7 +38,7 @@ async function main() {
     (await getWorkspacePackages()).filter(pkg => !!pkg.manifest.name).map((pkg) => [pkg.manifest.name, pkg])
   )
 
-  const vitaminWeixin = pkgs['vitamin-wx']
+  const vitaminWx = pkgs['vitamin-wx']
 
   const writeVersion = async (project) => {
     await project.writeProjectManifest({
@@ -48,7 +48,7 @@ async function main() {
   }
 
   try {
-    writeVersion(vitaminWeixin)
+    writeVersion(vitaminWx)
   } catch (error) {
     consola.error(error)
   }
