@@ -15,10 +15,10 @@ export const vcRoot = resolve(pkgRoot, 'vitamin-cc')
 // ${root}/vitamin-cc/package.json
 export const vcPkgPath = resolve(vcRoot, 'package.json')
 
-// ${root}/packages/vitamin-mini
-export const vmRoot = resolve(pkgRoot, 'vitamin-mini')
+// ${root}/packages/vitamin-weixin
+export const vmRoot = resolve(pkgRoot, 'vitamin-weixin')
 
-// ${root}/packages/vitamin-mini/package.json
+// ${root}/packages/vitamin-weixin/package.json
 export const vmPkgPath = resolve(vmRoot, 'package.json')
 
 // ${root}/packages/theme-chalk as @vitamin/theme-chalk

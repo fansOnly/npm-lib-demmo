@@ -18,11 +18,13 @@ export const run = async (command, cwd = projRoot) =>
     app.on('close', (code) => {
       process.removeListener('exit', onProcessExit)
 
-      if (code === 0) resolve()
-      else
+      if (code === 0) {
+        resolve()
+      } else {
         reject(
           new Error(`Command failed. \n Command: ${command} \n Code: ${code}`)
         )
+      }
     })
     process.on('exit', onProcessExit)
   })

@@ -5,8 +5,8 @@ import { dest, parallel, series, src } from 'gulp'
 import { run, withTaskName } from './src'
 import { projRoot, vcOutput, vmRoot, vmPkgPath } from "@vitamin/build-utils"
 
-// ${root}/dist/mini
-const distBundle = path.resolve(vcOutput, 'mini')
+// ${root}/dist/weixin
+const distBundle = path.resolve(vcOutput, 'weixin')
 
 export const copyFiles = () =>
   Promise.all([

@@ -9,6 +9,7 @@
     "build": "pnpm run -C internal/build build",
     "build:theme": "pnpm run -C packages/theme-chalk build",
     "publish": "sh ./scripts/publish.sh",
+    "update:version": "node scripts/update-version.js",
     "clean": "pnpm run clean:dist && pnpm run -r --parallel clean",
     "clean:dist": "rimraf dist",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,8 +20,12 @@
     "@vitamin/shared": "workspace:*",
     "@vitamin/theme-chalk": "workspace:*",
     "@vitamin/tokens": "workspace:*",
+    "chalk": "^5.1.2",
+    "consola": "^2.15.3",
+    "fs-extra": "^10.1.0",
     "rimraf": "^3.0.2",
     "sass": "^1.55.0",
+    "strip-json-comments": "^5.0.0",
     "vue-template-compiler": "^2.7.13"
   },
   "peerDependencies": {
@@ -29,6 +34,7 @@
   "engines": {
     "node": ">= 16"
   },
+  "type": "module",
   "pnpm": {
     "peerDependencyRules": {
       "ignoreMissing": [

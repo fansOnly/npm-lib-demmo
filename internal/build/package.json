@@ -4,8 +4,6 @@
     "build": "gulp --require @esbuild-kit/cjs-loader"
   },
   "devDependencies": {
-    "chalk": "^5.1.2",
-    "consola": "^2.15.3",
     "fs-extra": "^10.1.0",
     "gulp": "^4.0.2"
   }
