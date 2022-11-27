@@ -2,7 +2,7 @@ import path from 'path'
 import { writeFile } from 'fs/promises'
 import consola from 'consola'
 import chalk from 'chalk'
-import { getPackageManifest, getWorkspacePackages, vcOutput, vmRoot } from '@vitamin/build-utils'
+import { getPackageManifest, getWorkspacePackages, vxOutput, vxRoot } from '@vitamin/build-utils'
 
 let shouldUpdate = true
 
@@ -13,9 +13,9 @@ function getProjectPackage(projRoot) {
 function getVersion() {
   let pkg
   try {
-    pkg = getProjectPackage(vcOutput)
+    pkg = getProjectPackage(vxOutput)
   } catch (error) {
-    pkg = getProjectPackage(vmRoot)
+    pkg = getProjectPackage(vxRoot)
     shouldUpdate = false
   }
   return pkg.version
@@ -28,7 +28,7 @@ async function main() {
   if (!shouldUpdate) return
 
   await writeFile(
-    path.resolve(vmRoot, 'version.js'),
+    path.resolve(vxRoot, 'version.js'),
     `export const version = '${version}'\n`
   )
 

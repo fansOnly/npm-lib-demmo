@@ -3,28 +3,36 @@ import { mkdir } from 'fs/promises'
 import fs from 'fs-extra'
 import { dest, parallel, series, src } from 'gulp'
 import { run, withTaskName } from './src'
-import { projRoot, vcOutput, vmRoot, vmPackage } from "@vitamin/build-utils"
+import { projRoot, vxOutput, vxRoot, vxPackage, pkgRoot } from "@vitamin/build-utils"
 
-// ${root}/dist/weixin
-const distBundle = path.resolve(vcOutput, 'weixin')
+// ${root}/dist/wx-mp
+const distBundle = path.resolve(vxOutput, 'wx-mp')
 
 export const copyFiles = () =>
   Promise.all([
-    fs.copySync(vmPackage, path.join(vcOutput, 'package.json')),
+    fs.copySync(vxPackage, path.join(vxOutput, 'package.json')),
     fs.copySync(
       path.resolve(projRoot, 'README.md'),
-      path.resolve(vcOutput, 'README.md')
+      path.resolve(vxOutput, 'README.md')
+    ),
+    fs.copySync(
+      path.resolve(vxRoot, 'index.js'),
+      path.resolve(vxOutput, 'index.js')
+    ),
+    fs.copySync(
+      path.resolve(vxRoot, 'version.js'),
+      path.resolve(vxOutput, 'version.js')
     ),
   ])
 
 function buildMiniProgram() {
-  return src(path.resolve(vmRoot, 'src/**/*.vue'))
+  return src(path.resolve(pkgRoot, 'components/**'))
     .pipe(dest(distBundle))
 }
 
 export default series(
   withTaskName('clean', () => run('pnpm run clean')),
-  withTaskName('createOutput', () => mkdir(vcOutput, { recursive: true })),
+  withTaskName('createOutput', () => mkdir(vxOutput, { recursive: true })),
 
   withTaskName('buildThemeChalk', () =>
     run('pnpm run -C packages/theme-chalk build')

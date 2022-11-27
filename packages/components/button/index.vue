@@ -187,7 +187,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../common/style/mixins/button.scss';
+@import '../../theme-chalk/src/mixins/_button.scss';
 
 .vc-button-wrapper {
   display: inline-flex;
