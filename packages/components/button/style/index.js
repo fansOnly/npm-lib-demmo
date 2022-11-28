@@ -1,1 +1,1 @@
-import '@vitamin/theme-chalk/src/button.scss'
+import '@vitamin-lab/theme-chalk/src/button.scss'

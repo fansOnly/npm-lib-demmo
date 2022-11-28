@@ -1,10 +1,10 @@
 {
-  "name": "@vitamin/components",
+  "name": "@vitamin-lab/components",
   "description": "",
   "main": "index.js",
   "module": "index.js",
   "sideEffects": false,
   "peerDependencies": {
-    "vue": "^2.7.13"
+    "vue": "^3.2.45"
   }
 }

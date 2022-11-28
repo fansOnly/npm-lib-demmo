@@ -1,4 +1,4 @@
-import { withInstall } from '@vitamin/shared'
+import { withInstall } from '@vitamin-lab/shared'
 import Button from './src/button.vue'
 
 export const VxButton = withInstall(Button)

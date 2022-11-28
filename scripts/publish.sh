@@ -9,8 +9,8 @@ pnpm build
 npm config set registry https://registry.npmjs.org
 
 cd dist
-npm publish
 pnpm version patch
+npm publish
 pnpm update:version
 cd -
 

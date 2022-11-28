@@ -1,29 +1,29 @@
 import path from 'path'
 import { copyFile, mkdir } from 'fs/promises'
 import { parallel, series } from 'gulp'
-import { vcOutput, vcPackage, projRoot } from '@vitamin/build-utils'
+import { vLabOutput, vLabPackage, projRoot } from '@vitamin-lab/build-utils'
 import { withTaskName, run, runTask } from './src'
 
 export const copyFiles = () =>
   Promise.all([
-    copyFile(vcPackage, path.join(vcOutput, 'package.json')),
+    copyFile(vLabPackage, path.join(vLabOutput, 'package.json')),
     copyFile(
       path.resolve(projRoot, 'README.md'),
-      path.resolve(vcOutput, 'README.md')
+      path.resolve(vLabOutput, 'README.md')
     ),
   ])
 
 export const copyFullStyle = async () => {
-  await mkdir(path.resolve(vcOutput, 'dist'), { recursive: true })
+  await mkdir(path.resolve(vLabOutput, 'dist'), { recursive: true })
   await copyFile(
-    path.resolve(vcOutput, 'theme-chalk/index.css'),
-    path.resolve(vcOutput, 'dist/index.css')
+    path.resolve(vLabOutput, 'theme-chalk/index.css'),
+    path.resolve(vLabOutput, 'dist/index.css')
   )
 }
 
 export default series(
   withTaskName('clean', () => run('pnpm run clean')),
-  withTaskName('createOutput', () => mkdir(vcOutput, { recursive: true })),
+  withTaskName('createOutput', () => mkdir(vLabOutput, { recursive: true })),
 
   parallel(
     runTask('buildModules'),

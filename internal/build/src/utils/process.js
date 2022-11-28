@@ -1,7 +1,7 @@
 import { spawn } from 'child_process'
 import chalk from 'chalk'
 import consola from 'consola'
-import { projRoot } from '@vitamin/build-utils'
+import { projRoot } from '@vitamin-lab/build-utils'
 
 export const run = async (command, cwd = projRoot) =>
   new Promise((resolve, reject) => {

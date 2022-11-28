@@ -7,10 +7,10 @@ import dartSass from 'sass'
 import autoprefixer from 'gulp-autoprefixer'
 import cleanCss from 'gulp-clean-css'
 import rename from 'gulp-rename'
-import { vcOutput } from '@vitamin/build-utils'
+import { vLabOutput } from '@vitamin-lab/build-utils'
 
 const distFolder = path.resolve(__dirname, 'dist')
-const distBundle = path.resolve(vcOutput, 'theme-chalk')
+const distBundle = path.resolve(vLabOutput, 'theme-chalk')
 
 function buildThemeChalk() {
   const sass = gulpSass(dartSass)

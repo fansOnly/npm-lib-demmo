@@ -1,1 +1,1 @@
-export const cellKey = Symbol('vcCell')
+export const cellKey = Symbol('vLabCell')

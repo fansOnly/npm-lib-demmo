@@ -15,17 +15,17 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@vitamin/build-utils": "workspace:*",
-    "@vitamin/components": "workspace:*",
-    "@vitamin/shared": "workspace:*",
-    "@vitamin/theme-chalk": "workspace:*",
-    "@vitamin/tokens": "workspace:*",
+    "@vitamin-lab/build-utils": "workspace:*",
+    "@vitamin-lab/components": "workspace:*",
+    "@vitamin-lab/shared": "workspace:*",
+    "@vitamin-lab/theme-chalk": "workspace:*",
+    "@vitamin-lab/tokens": "workspace:*",
     "rimraf": "^3.0.2",
     "sass": "^1.55.0",
     "vue-template-compiler": "^2.7.13"
   },
   "peerDependencies": {
-    "vue": "^2.7.13"
+    "vue": "^3.2.45"
   },
   "engines": {
     "node": ">= 16"

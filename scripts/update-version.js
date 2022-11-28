@@ -2,7 +2,7 @@ import path from 'path'
 import { writeFile } from 'fs/promises'
 import consola from 'consola'
 import chalk from 'chalk'
-import { getPackageManifest, getWorkspacePackages, vxOutput, vxRoot } from '@vitamin/build-utils'
+import { getPackageManifest, getWorkspacePackages, vxOutput, vxRoot } from '@vitamin-lab/build-utils'
 
 let shouldUpdate = true
 
@@ -32,13 +32,13 @@ async function main() {
     `export const version = '${version}'\n`
   )
 
-  consola.debug(chalk.yellow(`Updating package.json for vitamin-cc`))
+  consola.debug(chalk.yellow(`Updating package.json for vitamin-ui`))
 
   const pkgs = Object.fromEntries(
     (await getWorkspacePackages()).filter(pkg => !!pkg.manifest.name).map((pkg) => [pkg.manifest.name, pkg])
   )
 
-  const vitaminC = pkgs['vitamin-cc']
+  const vitaminC = pkgs['vitamin-ui']
 
   const writeVersion = async (project) => {
     await project.writeProjectManifest({

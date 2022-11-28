@@ -1,4 +1,4 @@
-import { buildRoot } from '@vitamin/build-utils'
+import { buildRoot } from '@vitamin-lab/build-utils'
 import { run } from './process'
 
 export const withTaskName = (name, fn) =>

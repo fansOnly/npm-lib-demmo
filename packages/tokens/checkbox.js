@@ -1,1 +1,1 @@
-export const checkboxKey = Symbol('vcCheckbox')
+export const checkboxKey = Symbol('vLabCheckbox')

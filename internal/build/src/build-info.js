@@ -1,5 +1,5 @@
 import { resolve } from 'path'
-import { vcOutput } from '@vitamin/build-utils'
+import { vLabOutput } from '@vitamin-lab/build-utils'
 
 export const buildConfig = {
   esm: {
@@ -8,7 +8,7 @@ export const buildConfig = {
     ext: 'mjs',
     output: {
       name: 'es',
-      path: resolve(vcOutput, 'es'),
+      path: resolve(vLabOutput, 'es'),
     },
     bundle: {
       path: `es`,
@@ -20,7 +20,7 @@ export const buildConfig = {
     ext: 'js',
     output: {
       name: 'lib',
-      path: resolve(vcOutput, 'lib'),
+      path: resolve(vLabOutput, 'lib'),
     },
     bundle: {
       path: `lib`,

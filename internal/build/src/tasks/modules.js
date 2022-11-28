@@ -1,5 +1,5 @@
 import { rollup } from 'rollup'
-import { createVuePlugin } from 'vite-plugin-vue2'
+import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
@@ -7,7 +7,7 @@ import esbuild from 'rollup-plugin-esbuild'
 import postcss from 'rollup-plugin-postcss'
 import json from '@rollup/plugin-json'
 import glob from 'fast-glob'
-import { excludeFiles, pkgRoot, vcRoot } from '@vitamin/build-utils'
+import { excludeFiles, pkgRoot, vLabRoot } from '@vitamin-lab/build-utils'
 import { generateExternal, writeBundles } from '../utils'
 import { buildConfigEntries } from '../build-info'
 
@@ -22,7 +22,7 @@ export const buildModules = async () => {
   const bundle = await rollup({
     input,
     plugins: [
-      createVuePlugin(),
+      vue(),
       vueJsx(),
       nodeResolve({
         preferBuiltins: true,
@@ -50,7 +50,7 @@ export const buildModules = async () => {
         dir: config.output.path,
         exports: module === 'cjs' ? 'named' : undefined,
         preserveModules: true,
-        preserveModulesRoot: vcRoot,
+        preserveModulesRoot: vLabRoot,
         sourcemap: true,
         entryFileNames: `[name].${config.ext}`,
       }
