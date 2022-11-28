@@ -1,12 +1,12 @@
 import path from 'path'
 import { copyFile, mkdir } from 'fs/promises'
 import { parallel, series } from 'gulp'
-import { vuiOutput, vLabPackage, projRoot } from '@vitamins/build-utils'
+import { vuiOutput, vuiPackage, projRoot } from '@vitamins/build-utils'
 import { withTaskName, run, runTask } from './src'
 
 export const copyFiles = () =>
   Promise.all([
-    copyFile(vLabPackage, path.join(vuiOutput, 'package.json')),
+    copyFile(vuiPackage, path.join(vuiOutput, 'package.json')),
     copyFile(
       path.resolve(projRoot, 'README.md'),
       path.resolve(vuiOutput, 'README.md')
