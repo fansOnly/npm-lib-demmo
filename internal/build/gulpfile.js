@@ -37,3 +37,5 @@ export default series(
 
   parallel(copyFiles)
 )
+
+export * from './src'

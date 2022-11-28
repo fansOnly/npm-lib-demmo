@@ -25,7 +25,6 @@
 <script>
 import { addUnit } from '../../common/util'
 import { cellKey } from '@vitamin/tokens'
-import '../style'
 
 export default {
   name: 'vx-cell',

@@ -26,6 +26,6 @@ export async function generateEntryFiles(options) {
 }
 
 export function excludeFiles(files) {
-  const excludes = ['node_modules', 'dist', '__tests__', 'mock']
+  const excludes = ['node_modules', 'dist', 'test', "gulpfile", 'mock']
   return files.filter(path => !excludes.some(exclude => path.includes(exclude)))
 }

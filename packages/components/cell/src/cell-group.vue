@@ -6,7 +6,6 @@
 
 <script>
 import { cellKey } from '@vitamin/tokens'
-import '../style/cell-group'
 
 export default {
   name: 'vx-cell-group',

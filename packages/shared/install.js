@@ -1,7 +1,7 @@
-import { NOOP } from '@vitamin/shared'
+import { NOOP } from './utils'
 
 export const withInstall = (main, extra = {}) => {
-    main.install = function(app) {
+    main.install = function (app) {
         for (const comp of [main, ...Object.values(extra)]) {
             app.component(comp.name, comp)
         }

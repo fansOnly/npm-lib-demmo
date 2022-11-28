@@ -21,7 +21,6 @@
 
 <script>
 import { addUnit } from '../../common/util';
-import '../style'
 
 export default {
   name: 'vx-button',
