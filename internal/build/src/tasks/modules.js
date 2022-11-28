@@ -7,7 +7,7 @@ import esbuild from 'rollup-plugin-esbuild'
 import postcss from 'rollup-plugin-postcss'
 import json from '@rollup/plugin-json'
 import glob from 'fast-glob'
-import { excludeFiles, pkgRoot, vLabRoot } from '@vitamins/build-utils'
+import { excludeFiles, pkgRoot, vuiRoot } from '@vitamins/build-utils'
 import { generateExternal, writeBundles } from '../utils'
 import { buildConfigEntries } from '../build-info'
 
@@ -50,7 +50,7 @@ export const buildModules = async () => {
         dir: config.output.path,
         exports: module === 'cjs' ? 'named' : undefined,
         preserveModules: true,
-        preserveModulesRoot: vLabRoot,
+        preserveModulesRoot: vuiRoot,
         sourcemap: true,
         entryFileNames: `[name].${config.ext}`,
       }

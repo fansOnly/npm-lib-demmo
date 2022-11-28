@@ -1,6 +1,6 @@
 {
-  "name": "vitamin-ui",
-  "version": "0.0.0",
+  "name": "vitamin-cui",
+  "version": "0.0.2",
   "description": "a npm demo library",
   "license": "MIT",
   "main": "lib/index.js",

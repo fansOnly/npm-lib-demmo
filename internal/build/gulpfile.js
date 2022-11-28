@@ -1,29 +1,29 @@
 import path from 'path'
 import { copyFile, mkdir } from 'fs/promises'
 import { parallel, series } from 'gulp'
-import { vLabOutput, vLabPackage, projRoot } from '@vitamins/build-utils'
+import { vuiOutput, vLabPackage, projRoot } from '@vitamins/build-utils'
 import { withTaskName, run, runTask } from './src'
 
 export const copyFiles = () =>
   Promise.all([
-    copyFile(vLabPackage, path.join(vLabOutput, 'package.json')),
+    copyFile(vLabPackage, path.join(vuiOutput, 'package.json')),
     copyFile(
       path.resolve(projRoot, 'README.md'),
-      path.resolve(vLabOutput, 'README.md')
+      path.resolve(vuiOutput, 'README.md')
     ),
   ])
 
 export const copyFullStyle = async () => {
-  await mkdir(path.resolve(vLabOutput, 'dist'), { recursive: true })
+  await mkdir(path.resolve(vuiOutput, 'dist'), { recursive: true })
   await copyFile(
-    path.resolve(vLabOutput, 'theme-chalk/index.css'),
-    path.resolve(vLabOutput, 'dist/index.css')
+    path.resolve(vuiOutput, 'theme-chalk/index.css'),
+    path.resolve(vuiOutput, 'dist/index.css')
   )
 }
 
 export default series(
   withTaskName('clean', () => run('pnpm run clean')),
-  withTaskName('createOutput', () => mkdir(vLabOutput, { recursive: true })),
+  withTaskName('createOutput', () => mkdir(vuiOutput, { recursive: true })),
 
   parallel(
     runTask('buildModules'),

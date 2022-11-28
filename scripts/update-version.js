@@ -2,7 +2,7 @@ import path from 'path'
 import { writeFile } from 'fs/promises'
 import consola from 'consola'
 import chalk from 'chalk'
-import { getPackageManifest, getWorkspacePackages, vLabOutput, vLabRoot } from '@vitamins/build-utils'
+import { getPackageManifest, getWorkspacePackages, vuiOutput, vuiRoot } from '@vitamins/build-utils'
 
 let shouldUpdate = true
 
@@ -13,9 +13,9 @@ function getProjectPackage(projRoot) {
 function getVersion() {
   let pkg
   try {
-    pkg = getProjectPackage(vLabOutput)
+    pkg = getProjectPackage(vuiOutput)
   } catch (error) {
-    pkg = getProjectPackage(vLabRoot)
+    pkg = getProjectPackage(vuiRoot)
     shouldUpdate = false
   }
   return pkg.version
@@ -28,17 +28,17 @@ async function main() {
   if (!shouldUpdate) return
 
   await writeFile(
-    path.resolve(vLabRoot, 'version.js'),
+    path.resolve(vuiRoot, 'version.js'),
     `export const version = '${version}'\n`
   )
 
-  consola.debug(chalk.yellow(`Updating package.json for vitamin-ui`))
+  consola.debug(chalk.yellow(`Updating package.json for vitamin-cui`))
 
   const pkgs = Object.fromEntries(
     (await getWorkspacePackages()).filter(pkg => !!pkg.manifest.name).map((pkg) => [pkg.manifest.name, pkg])
   )
 
-  const vitaminUI = pkgs['vitamin-ui']
+  const vitaminUI = pkgs['vitamin-cui']
 
   const writeVersion = async (project) => {
     await project.writeProjectManifest({
