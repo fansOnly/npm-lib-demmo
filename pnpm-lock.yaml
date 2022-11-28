@@ -11,7 +11,6 @@ importers:
       '@vitamin-lab/tokens': workspace:*
       rimraf: ^3.0.2
       sass: ^1.55.0
-      vue-template-compiler: ^2.7.13
     devDependencies:
       '@vitamin-lab/build-utils': link:internal/build-utils
       '@vitamin-lab/components': link:packages/components
@@ -20,7 +19,6 @@ importers:
       '@vitamin-lab/tokens': link:packages/tokens
       rimraf: registry.npmmirror.com/rimraf/3.0.2
       sass: registry.npmmirror.com/sass/1.55.0
-      vue-template-compiler: registry.npmmirror.com/vue-template-compiler/2.7.13
 
   internal/build:
     specifiers:
@@ -3950,12 +3948,6 @@ packages:
     engines: {node: '>= 6'}
     dev: false
 
-  registry.npmmirror.com/de-indent/1.0.2:
-    resolution: {integrity: sha512-e/1zu3xH5MQryN2zdVaF0OrdNLUbvWxzMbi+iNA6Bky7l1RoP8a2fIbRocyHclXt/arDrrR6lL3TqFD9pMQTsg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/de-indent/-/de-indent-1.0.2.tgz}
-    name: de-indent
-    version: 1.0.2
-    dev: true
-
   registry.npmmirror.com/debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/debug/-/debug-2.6.9.tgz}
     name: debug
@@ -6037,13 +6029,6 @@ packages:
     engines: {node: '>= 0.4.0'}
     dependencies:
       function-bind: registry.npmmirror.com/function-bind/1.1.1
-
-  registry.npmmirror.com/he/1.2.0:
-    resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/he/-/he-1.2.0.tgz}
-    name: he
-    version: 1.2.0
-    hasBin: true
-    dev: true
 
   registry.npmmirror.com/homedir-polyfill/1.0.3:
     resolution: {integrity: sha512-eSmmWE5bZTK2Nou4g0AI3zZ9rswp7GRKoKXS1BLUkvPviOqs4YTN1djQIqrXy9k5gEtdLPy86JjRwsNM9tnDcA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/homedir-polyfill/-/homedir-polyfill-1.0.3.tgz}
@@ -10588,15 +10573,6 @@ packages:
     optionalDependencies:
       fsevents: registry.npmmirror.com/fsevents/2.3.2
     dev: false
-
-  registry.npmmirror.com/vue-template-compiler/2.7.13:
-    resolution: {integrity: sha512-jYM6TClwDS9YqP48gYrtAtaOhRKkbYmbzE+Q51gX5YDr777n7tNI/IZk4QV4l/PjQPNh/FVa/E92sh/RqKMrog==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue-template-compiler/-/vue-template-compiler-2.7.13.tgz}
-    name: vue-template-compiler
-    version: 2.7.13
-    dependencies:
-      de-indent: registry.npmmirror.com/de-indent/1.0.2
-      he: registry.npmmirror.com/he/1.2.0
-    dev: true
 
   registry.npmmirror.com/vue/3.2.45:
     resolution: {integrity: sha512-9Nx/Mg2b2xWlXykmCwiTUCWHbWIj53bnkizBxKai1g61f2Xit700A1ljowpTIM11e3uipOeiPcSqnmBg6gyiaA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue/-/vue-3.2.45.tgz}

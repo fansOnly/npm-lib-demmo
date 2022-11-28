@@ -21,8 +21,7 @@
     "@vitamin-lab/theme-chalk": "workspace:*",
     "@vitamin-lab/tokens": "workspace:*",
     "rimraf": "^3.0.2",
-    "sass": "^1.55.0",
-    "vue-template-compiler": "^2.7.13"
+    "sass": "^1.55.0"
   },
   "peerDependencies": {
     "vue": "^3.2.45"
