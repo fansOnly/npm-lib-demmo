@@ -1,5 +1,5 @@
 
-import { VxButton } from '@vitamin-lab/components/button'
+import { VxButton } from '@vitamins/components/button'
 
 export default [
   VxButton,

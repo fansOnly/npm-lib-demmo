@@ -1,5 +1,5 @@
 {
-  "name": "@vitamin-lab/build-utils",
+  "name": "@vitamins/build-utils",
   "private": true,
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

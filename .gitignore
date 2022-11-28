@@ -10,6 +10,7 @@ node_modules
 
 # Bundle
 dist
+packages/vitamin-ui/version.js
 
 # local env files
 *.local

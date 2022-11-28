@@ -1,7 +1,7 @@
 import path from 'path'
 import { copyFile, mkdir } from 'fs/promises'
 import { parallel, series } from 'gulp'
-import { vLabOutput, vLabPackage, projRoot } from '@vitamin-lab/build-utils'
+import { vLabOutput, vLabPackage, projRoot } from '@vitamins/build-utils'
 import { withTaskName, run, runTask } from './src'
 
 export const copyFiles = () =>

@@ -7,7 +7,7 @@ import esbuild from 'rollup-plugin-esbuild'
 import postcss from 'rollup-plugin-postcss'
 import json from '@rollup/plugin-json'
 import glob from 'fast-glob'
-import { excludeFiles, pkgRoot, vLabRoot } from '@vitamin-lab/build-utils'
+import { excludeFiles, pkgRoot, vLabRoot } from '@vitamins/build-utils'
 import { generateExternal, writeBundles } from '../utils'
 import { buildConfigEntries } from '../build-info'
 

@@ -1,5 +1,5 @@
 import { resolve } from 'path'
-import { vLabOutput } from '@vitamin-lab/build-utils'
+import { vLabOutput } from '@vitamins/build-utils'
 
 export const buildConfig = {
   esm: {

@@ -9,17 +9,17 @@
     "build": "pnpm run -C internal/build start",
     "build:theme": "pnpm run -C packages/theme-chalk build",
     "publish": "sh ./scripts/publish.sh",
-    "update:version": "node scripts/update-version.js",
+    "update:version": "node ./scripts/update-version.js",
     "clean": "pnpm run clean:dist && pnpm run -r --parallel clean",
     "clean:dist": "rimraf dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@vitamin-lab/build-utils": "workspace:*",
-    "@vitamin-lab/components": "workspace:*",
-    "@vitamin-lab/shared": "workspace:*",
-    "@vitamin-lab/theme-chalk": "workspace:*",
-    "@vitamin-lab/tokens": "workspace:*",
+    "@vitamins/build-utils": "workspace:*",
+    "@vitamins/components": "workspace:*",
+    "@vitamins/shared": "workspace:*",
+    "@vitamins/theme-chalk": "workspace:*",
+    "@vitamins/tokens": "workspace:*",
     "rimraf": "^3.0.2",
     "sass": "^1.55.0"
   },
@@ -29,6 +29,7 @@
   "engines": {
     "node": ">= 16"
   },
+  "type": "module",
   "pnpm": {
     "peerDependencyRules": {
       "ignoreMissing": [

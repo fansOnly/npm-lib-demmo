@@ -1,4 +1,4 @@
-import { getPackageDependencies, vLabPackage } from '@vitamin-lab/build-utils'
+import { getPackageDependencies, vLabPackage } from '@vitamins/build-utils'
 
 export function generateExternal(options = {}) {
   const { dependencies, peerDependencies } = getPackageDependencies(vLabPackage)

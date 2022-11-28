@@ -1,5 +1,5 @@
 {
-  "name": "@vitamin-lab/build",
+  "name": "@vitamins/build",
   "scripts": {
     "start": "gulp --require @esbuild-kit/cjs-loader"
   },

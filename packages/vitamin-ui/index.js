@@ -1,5 +1,5 @@
-export * from '@vitamin-lab/components'
-export * from '@vitamin-lab/tokens'
+export * from '@vitamins/components'
+export * from '@vitamins/tokens'
 import installer from './defaults'
 
 export default installer

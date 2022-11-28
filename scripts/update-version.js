@@ -2,7 +2,7 @@ import path from 'path'
 import { writeFile } from 'fs/promises'
 import consola from 'consola'
 import chalk from 'chalk'
-import { getPackageManifest, getWorkspacePackages, vxOutput, vxRoot } from '@vitamin-lab/build-utils'
+import { getPackageManifest, getWorkspacePackages, vLabOutput, vLabRoot } from '@vitamins/build-utils'
 
 let shouldUpdate = true
 
@@ -13,9 +13,9 @@ function getProjectPackage(projRoot) {
 function getVersion() {
   let pkg
   try {
-    pkg = getProjectPackage(vxOutput)
+    pkg = getProjectPackage(vLabOutput)
   } catch (error) {
-    pkg = getProjectPackage(vxRoot)
+    pkg = getProjectPackage(vLabRoot)
     shouldUpdate = false
   }
   return pkg.version
@@ -28,7 +28,7 @@ async function main() {
   if (!shouldUpdate) return
 
   await writeFile(
-    path.resolve(vxRoot, 'version.js'),
+    path.resolve(vLabRoot, 'version.js'),
     `export const version = '${version}'\n`
   )
 
@@ -38,7 +38,7 @@ async function main() {
     (await getWorkspacePackages()).filter(pkg => !!pkg.manifest.name).map((pkg) => [pkg.manifest.name, pkg])
   )
 
-  const vitaminC = pkgs['vitamin-ui']
+  const vitaminUI = pkgs['vitamin-ui']
 
   const writeVersion = async (project) => {
     await project.writeProjectManifest({
@@ -48,7 +48,7 @@ async function main() {
   }
 
   try {
-    writeVersion(vitaminC)
+    writeVersion(vitaminUI)
   } catch (error) {
     consola.error(error)
   }
