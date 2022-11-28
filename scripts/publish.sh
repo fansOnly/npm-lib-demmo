@@ -5,11 +5,15 @@ set -e
 pnpm i --frozen-lockfile
 
 pnpm build
-pnpm build:theme
+
+npm config set registry https://registry.npmjs.org
 
 cd dist
-pnpm version patch
 npm publish
+pnpm version patch
+pnpm update:version
 cd -
+
+npm config set registry https://registry.npm.taobao.org
 
 echo "✅ Publish completed"
