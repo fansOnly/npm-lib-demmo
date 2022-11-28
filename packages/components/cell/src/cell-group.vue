@@ -9,11 +9,11 @@ import { cellKey } from '@vitamin/tokens'
 import '../style/cell-group'
 
 export default {
-  name: 'vc-cell-group',
+  name: 'vx-cell-group',
   provide() {
     return {
       [cellKey]: this
-    };
+    }
   },
   props: {
     // 是否显示边框线
@@ -31,5 +31,5 @@ export default {
     // 自定义右侧文本样式
     textStyle: null
   },
-};
+}
 </script>

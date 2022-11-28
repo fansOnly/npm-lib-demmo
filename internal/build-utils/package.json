@@ -8,7 +8,9 @@
     "build": "unbuild"
   },
   "devDependencies": {
-    "fast-glob": "^3.2.12",
     "unbuild": "^0.9.4"
+  },
+  "dependencies": {
+    "fast-glob": "^3.2.12"
   }
 }

@@ -24,7 +24,7 @@ import { addUnit } from '../../common/util';
 import '../style'
 
 export default {
-  name: 'vc-button',
+  name: 'vx-button',
   props: {
     // 按钮类型
     type: {

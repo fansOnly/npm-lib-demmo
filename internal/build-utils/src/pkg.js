@@ -1,12 +1,12 @@
 import glob from "fast-glob"
-import { vcPkgPath, pkgRoot } from './paths'
+import { pkgRoot } from './paths'
 
 export const getPackageManifest = pkgPath => {
   return require(pkgPath)
 }
 
-export function getPackageDependencies() {
-  const manifest = getPackageManifest(vcPkgPath)
+export function getPackageDependencies(pkgPath) {
+  const manifest = getPackageManifest(pkgPath)
   const { dependencies = {}, peerDependencies = {} } = manifest
 
   return {

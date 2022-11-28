@@ -1,17 +1,21 @@
 <template>
-  <view :class="['vc-cell', `vc-cell-${size}`, isBorder ? 'vc-hairline--bottom' : null, disabled ? 'vc-cell--disabled' : null, customClasses]" :style="wrapperStyled" :hover-class="cellHoverClass" :hover-stay-time="200" @click="onClick">
+  <view
+    :class="['vc-cell', `vc-cell-${size}`, isBorder ? 'vc-hairline--bottom' : null, disabled ? 'vc-cell--disabled' : null, customClasses]"
+    :style="wrapperStyled" :hover-class="cellHoverClass" :hover-stay-time="200" @click="onClick">
     <view :class="['vc-cell__title', titleClasses]" :style="titleStyled">
-      <template v-if="title">{{title}}</template>
+      <template v-if="title">{{ title }}</template>
       <slot v-else name="title"></slot>
     </view>
     <view class="vc-cell__right" :style="rightStyled">
       <view :class="['vc-cell__value', textClasses]" :style="textStyled">
-        <template v-if="text">{{text}}</template>
+        <template v-if="text">{{ text }}</template>
         <slot v-else name="text"></slot>
       </view>
       <view v-if="isLink" class="vc-cell__right-icon">
         <!-- slot 命名 right-icon 不支持？？？ -->
-        <slot name="icon"><vc-icon name="arrow-right" /></slot>
+        <slot name="icon">
+          <vc-icon name="arrow-right" />
+        </slot>
       </view>
       <slot name="extra"></slot>
     </view>
@@ -19,12 +23,12 @@
 </template>
 
 <script>
-import { addUnit } from '../../common/util';
+import { addUnit } from '../../common/util'
 import { cellKey } from '@vitamin/tokens'
 import '../style'
 
 export default {
-  name: 'vc-cell',
+  name: 'vx-cell',
   inject: {
     parent: {
       from: cellKey,
@@ -56,7 +60,7 @@ export default {
       type: String,
       default: 'normal',
       validator(value) {
-        return ['normal', 'small', 'mini', 'large'].includes(value);
+        return ['normal', 'small', 'mini', 'large'].includes(value)
       }
     },
     // 当 isLink 为 true 可设置高亮颜色
@@ -93,51 +97,51 @@ export default {
   },
   computed: {
     wrapperStyled() {
-      let style = '';
-      const lineHeight = this.height === 'auto' ? 'auto' : this.height + 'px';
-      style += `height: ${lineHeight};`;
-      return style + (this.customStyle ?? '') + (this.parent?.customStyle ?? '');
+      let style = ''
+      const lineHeight = this.height === 'auto' ? 'auto' : this.height + 'px'
+      style += `height: ${lineHeight};`
+      return style + (this.customStyle ?? '') + (this.parent?.customStyle ?? '')
     },
     titleStyled() {
-      let style = '';
+      let style = ''
       if (this.titleWidth) {
-        style += `min-width: ${addUnit(this.titleWidth)};`;
+        style += `min-width: ${addUnit(this.titleWidth)};`
       } else {
-        style += 'flex: 1;';
+        style += 'flex: 1;'
       }
-      return style + (this.titleStyle ?? '') + (this.parent?.titleStyle ?? '');
+      return style + (this.titleStyle ?? '') + (this.parent?.titleStyle ?? '')
     },
     rightStyled() {
-      return Number(this.titleWidth) === 0 ? '' : 'flex: 1;';
+      return Number(this.titleWidth) === 0 ? '' : 'flex: 1;'
     },
     textStyled() {
-      let style = '';
+      let style = ''
       if (this.isLinkActive && this.linkActiveColor) {
-        style += `color: ${this.linkActiveColor};`;
+        style += `color: ${this.linkActiveColor};`
       }
-      return style + (this.textStyle ?? '') + (this.parent?.textStyle ?? '');
+      return style + (this.textStyle ?? '') + (this.parent?.textStyle ?? '')
     },
     customClasses() {
-      return (this.customClass ?? '') + (this.parent?.customClass ?? '');
+      return (this.customClass ?? '') + (this.parent?.customClass ?? '')
     },
     titleClasses() {
-      return (this.titleClass ?? '') + (this.parent?.titleClass ?? '');
+      return (this.titleClass ?? '') + (this.parent?.titleClass ?? '')
     },
     textClasses() {
-      return (this.textClass ?? '') + (this.parent?.textClass ?? '');
+      return (this.textClass ?? '') + (this.parent?.textClass ?? '')
     },
     isBorder() {
-      return this.border === null ? this.parent?.border : this.border;
+      return this.border === null ? this.parent?.border : this.border
     },
     cellHoverClass() {
-      return this.isLink ? this.hoverClass : null;
+      return this.isLink ? this.hoverClass : null
     }
   },
   methods: {
     onClick(evt) {
-      if (this.disabled) return;
-      this.$emit('click', evt);
+      if (this.disabled) return
+      this.$emit('click', evt)
     },
   }
-};
+}
 </script>
