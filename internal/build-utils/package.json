@@ -11,6 +11,8 @@
     "unbuild": "^0.9.4"
   },
   "dependencies": {
-    "fast-glob": "^3.2.12"
+    "@pnpm/find-workspace-packages": "^5.0.9",
+    "@pnpm/logger": "^5.0.0",
+    "@pnpm/write-project-manifest": "^4.0.2"
   }
 }

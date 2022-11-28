@@ -1,8 +1,15 @@
-import glob from "fast-glob"
-import { pkgRoot } from './paths'
+import { findWorkspacePackages } from '@pnpm/find-workspace-packages'
+import { writeProjectManifest } from '@pnpm/write-project-manifest'
+import { projRoot } from './paths'
+
+export const getWorkspacePackages = () => findWorkspacePackages(projRoot)
 
 export const getPackageManifest = pkgPath => {
   return require(pkgPath)
+}
+
+export const writePackageManifest = async (pkgPath, data = {}) => {
+  await writeProjectManifest(pkgPath, data)
 }
 
 export function getPackageDependencies(pkgPath) {
@@ -13,16 +20,6 @@ export function getPackageDependencies(pkgPath) {
     dependencies: Object.keys(dependencies),
     peerDependencies: Object.keys(peerDependencies),
   }
-}
-
-export async function generateEntryFiles(options) {
-  const files = await glob('**/index.{js,ts,vue}', {
-    cwd: pkgRoot,
-    absolute: true,
-    onlyFiles: true,
-    ...options
-  })
-  return files
 }
 
 export function excludeFiles(files) {
