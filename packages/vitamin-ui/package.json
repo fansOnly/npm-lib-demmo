@@ -1,21 +1,27 @@
 {
   "name": "vitamin-cui",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "description": "a npm demo library",
   "license": "MIT",
+  "keywords": [],
+  "homepage": "",
   "main": "lib/index.js",
   "module": "es/index.mjs",
   "exports": {
     ".": {
       "require": "./lib/index.js",
       "import": "./es/index.mjs"
-    }
+    },
+    "./es": "./es/index.mjs",
+    "./lib": "./lib/index.js",
+    "./*": "./*"
   },
-  "files": [
-    "es",
-    "lib",
-    "theme-chalk"
-  ],
+  "unpkg": "",
+  "jsdelivr": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unknown"
+  },
   "publishConfig": {
     "access": "public"
   },

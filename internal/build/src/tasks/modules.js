@@ -10,6 +10,7 @@ import glob from 'fast-glob'
 import { excludeFiles, pkgRoot, vuiRoot } from '@vitamins/build-utils'
 import { generateExternal, writeBundles } from '../utils'
 import { buildConfigEntries } from '../build-info'
+import { vitaminAlias } from '../plugins/vitamin-alias'
 
 export const buildModules = async () => {
   const input = excludeFiles(
@@ -22,7 +23,10 @@ export const buildModules = async () => {
   const bundle = await rollup({
     input,
     plugins: [
-      vue(),
+      vitaminAlias(),
+      vue({
+        isProduction: false,
+      }),
       vueJsx(),
       nodeResolve({
         preferBuiltins: true,
@@ -39,7 +43,7 @@ export const buildModules = async () => {
         },
       }),
     ],
-    external: await generateExternal(),
+    external: await generateExternal({ full: false }),
     treeshake: false,
   })
   await writeBundles(

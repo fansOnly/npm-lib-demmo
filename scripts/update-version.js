@@ -6,8 +6,8 @@ import { getPackageManifest, getWorkspacePackages, vuiOutput, vuiRoot } from '@v
 
 let shouldUpdate = true
 
-function getProjectPackage(projRoot) {
-  return getPackageManifest(path.resolve(projRoot, 'package.json'))
+function getProjectPackage(project) {
+  return getPackageManifest(path.resolve(project, 'package.json'))
 }
 
 function getVersion() {

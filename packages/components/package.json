@@ -1,8 +1,10 @@
 {
   "name": "@vitamins/components",
-  "description": "",
+  "description": "some components ...",
   "main": "index.js",
   "module": "index.js",
+  "unpkg": "index.js",
+  "jsdelivr": "index.js",
   "sideEffects": false,
   "peerDependencies": {
     "vue": "^3.2.45"

@@ -1,5 +1,7 @@
 import { withInstall } from '@vitamins/shared'
 import Button from './src/button.vue'
 
-export const VxButton = withInstall(Button)
-export default VxButton
+export const VuiButton = withInstall(Button)
+export default VuiButton
+
+export * from './src/button'

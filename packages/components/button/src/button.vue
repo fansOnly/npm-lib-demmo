@@ -5,18 +5,10 @@
 </template>
 
 <script setup>
-const props = defineProps({
-  type: {
-    type: String,
-    default: 'default'
-  },
-  round: {
-    type: Boolean,
-    default: false
-  }
-})
+import { buttonProps, buttonEmits } from './button'
+const props = defineProps(buttonProps)
 
-const emit = defineEmits(['click'])
+const emit = defineEmits(buttonEmits)
 
 const handleClick = (evt) => {
   console.log('button click', evt)

@@ -1,6 +1,6 @@
 
-import { VxButton } from '@vitamins/components/button'
+import { VuiButton } from '@vitamins/components/button'
 
 export default [
-  VxButton,
+  VuiButton,
 ]

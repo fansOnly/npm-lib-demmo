@@ -5,7 +5,9 @@ export function generateExternal(options = {}) {
 
   return (id) => {
     const packages = peerDependencies
-    // packages.push('@vue', ...dependencies)
+    if (!options?.full) {
+      packages.push('@vue', ...dependencies)
+    }
     return [...new Set(packages)].some(pkg => id === pkg || id?.startsWith(`${pkg}/`))
   }
 }

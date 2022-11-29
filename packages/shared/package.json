@@ -1,5 +1,6 @@
 {
   "name": "@vitamins/shared",
+  "private": true,
   "main": "index.js",
   "license": "MIT"
 }

@@ -30,7 +30,7 @@ function buildThemeChalk() {
     .pipe(
       rename((path) => {
         if (!noPrefixFile.test(path.basename)) {
-          path.basename = `vc-${path.basename}`
+          path.basename = `vui-${path.basename}`
         }
       })
     )
